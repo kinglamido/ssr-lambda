@@ -10,6 +10,14 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   devtool: 'inline-source-map',
+  devServer: {
+    proxy: {
+      '/.netlify': {
+        target: 'http://localhost:9000',
+        pathRewrite: { '^/.netlify/functions': '' }
+      }
+    }
+  },
   module: {
     rules: [
       {
