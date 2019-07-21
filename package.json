@@ -9,6 +9,8 @@
     "build:dev": "./node_modules/.bin/webpack --mode development",
     "prestart": "npm run build:dev",
     "start": "node server/run.js",
+    "lambda-serve": "netlify-lambda serve server/server",
+    "lambda-build": "netlify-lambda build server",
     "lint": "./node_modules/.bin/eslint server client shared iso-middleware --ext .js,.jsx --fix"
   },
   "dependencies": {
